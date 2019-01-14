@@ -6,6 +6,7 @@ const express = require('express');
 
 const app = express();
 
+// Connect "public/" folder to our express app
 app.use(express.static('public'));
 
 
@@ -19,7 +20,7 @@ app.get('/', (request, response, next) => {
     response.sendFile(__dirname + '/views/home.html');
 });
 
-
+// GET sends the data to the client (in this case the browser) to be displayed to the users
 app.get('/cat', (req, res, next) => {
     // res.send('<img width="300" src="/images/cool-cat.jpg">');
     res.sendFile(__dirname + '/views/cat.html');
